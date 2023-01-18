@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import AlumnoLayout from '../components/AlumnoLayout';
-import Abecedario from '../components/Letras/ABecedario'
+import Abecedario from '../components/Letras/Abecedario'
 
 
 const Letras = () => {
