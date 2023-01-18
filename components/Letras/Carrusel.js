@@ -4,7 +4,7 @@ import Image from 'next/image';
 const Carrusel = () => {
   return (
     <div className='w-auto'>
-        Carrusel
+        Carrusel 
     </div>
   )
 }
