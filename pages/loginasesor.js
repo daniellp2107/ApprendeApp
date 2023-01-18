@@ -1,6 +1,4 @@
 import React, { useState} from 'react';
-// import './inicio.css';
-// import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import { useFormik } from 'formik';
@@ -32,7 +30,7 @@ const LoginAsesor = () => {
   //mutation para el nuevo assesor
   const [autenticarAsesor] = useMutation(AUTENTICAR_ASESOR_MUTATION);
   const {data}= useQuery(QUERY);
-  console.log(data);
+  // console.log(data);
 
   //router 
   const router = useRouter();
@@ -51,8 +49,8 @@ const LoginAsesor = () => {
         .min(6,'La contraseña debe tener almenos 6 caracteres'),
     }),
     onSubmit: async valores =>{
-      console.log('Enviando');
-      console.log(valores);
+      // console.log('Enviando');
+      // console.log(valores);
       const {email, password} = valores;
       try {
         const {data} = await autenticarAsesor({
@@ -63,17 +61,21 @@ const LoginAsesor = () => {
             }
           }
         });
-        console.log(data);
+        // console.log(data);
         guardarMensaje('Autenticando...');
 
-        //redireccionar hacia clientes
+        //guardar el token en el localstorage
+        const {token} = data.autenticarAsesor;
+        // console.log(token);
+        localStorage.setItem('token', token);
+
+        //redireccionar hacia pagina del asesor
         setTimeout(()=>{
-            guardarMensaje(null);
-            router.push('/');
+          guardarMensaje(null);
+          router.push('/inicioasesor');
         },3000)
 
       } catch (error) {
-        console.log(data);
         guardarMensaje(error.message.replace('GraphQL error', ''));
         console.log(error.message);
         setTimeout(() => {
@@ -125,8 +127,8 @@ const LoginAsesor = () => {
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}/>
-                {/* <Link href="/nuevoasesor" className='bg-red-800 mt-5 rounded p-2'> ¡Registrate!</Link>
-                <Link href="/nuevoasesor" className='bg-red-800 mt-5 rounded p-2'> ¿Olvidaste tu contraseña?</Link> */}
+                <Link href="/nuevoasesor" className='bg-red-800 mt-5 rounded p-2'> ¡Registrate!</Link>
+                <Link href="/recuperarcontraseña" className='bg-red-800 mt-5 rounded p-2'> ¿Olvidaste tu contraseña?</Link>
                 {formik.touched.password && formik.errors.password ? (
                   <div className='my-2 bg-red-100 border-l-4 border-red-500 text-red-700 p-4'>
                     <p className='font-bold'> Error</p>

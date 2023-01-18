@@ -1,7 +1,5 @@
 import Link from 'next/link';
-import Layout from '../components/Layout'
-
-import React from 'react'
+import Layout from '../components/Layout';
 
 const OpcionUsuario = () => {
   return (
@@ -41,7 +39,7 @@ const OpcionUsuario = () => {
           </div>
           <div className='mt-5 text-center'> 
             
-            <Link href="/inicio" className='text-center bg-red-800 font-bold p-2 rounded' >¡Comienza Ya!</Link>
+            <Link href="/" className='text-center bg-red-800 font-bold p-2 rounded' >¡Comienza Ya!</Link>
             
           </div>
           <div className='p-5'>
@@ -51,7 +49,7 @@ const OpcionUsuario = () => {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 export default OpcionUsuario;

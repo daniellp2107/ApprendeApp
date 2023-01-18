@@ -1,6 +1,4 @@
 import React, { useState} from 'react';
-// import './inicio.css';
-// import { Col, Container, Row } from 'react-bootstrap';
 import Link from 'next/link';
 import Layout from '../components/Layout';
 import { useFormik } from 'formik';

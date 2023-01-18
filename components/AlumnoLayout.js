@@ -2,8 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import Navbar from './Navbar';
 import { useRouter } from 'next/router';
+import AlumnoNavbar from './AlumnoNavbar';
 
-const Layout = ({children}) => {
+const AlumnoLayout = ({children}) => {
 
   const router = useRouter();
 
@@ -16,7 +17,7 @@ const Layout = ({children}) => {
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <div className='bg-blue-800 min-h-screen'>
-        {router.pathname === '/opcionusuario' || router.pathname === '/' || router.pathname === '/loginasesor' || router.pathname === '/loginalumno' ? null : <Navbar />}  
+      {router.pathname === '/opcionusuario' || router.pathname === '/' || router.pathname === '/loginasesor' || router.pathname === '/loginalumno' ? null : <AlumnoNavbar />}  
         
         <main className='bg-blue-800 '>
           {children}
@@ -26,4 +27,4 @@ const Layout = ({children}) => {
   )
 }
 
-export default Layout;
+export default AlumnoLayout;
