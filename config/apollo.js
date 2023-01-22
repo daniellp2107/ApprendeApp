@@ -3,7 +3,7 @@ import { setContext } from "apollo-link-context";
 
 const httpLink = createHttpLink ({
     // uri:'http://localhost:4000/',
-    uri:'https://fast-ravine-09676.herokuapp.com/'
+    uri:'https://gqlaprendev2.fly.dev/'
 });
 
 const authLink = setContext ((_,{headers})=>{
