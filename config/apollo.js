@@ -2,8 +2,8 @@ import { ApolloClient,createHttpLink, HttpLink, InMemoryCache } from "@apollo/cl
 import { setContext } from "apollo-link-context";
 
 const httpLink = createHttpLink ({
-    uri:'http://localhost:4000/',
-    // uri:'https://gqlaprendev2.fly.dev/'
+    // uri:'http://localhost:4000/',
+    uri:'https://gqlaprendev2.fly.dev/'
 });
 
 const authLink = setContext ((_,{headers})=>{
