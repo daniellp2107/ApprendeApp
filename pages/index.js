@@ -1,7 +1,10 @@
 import Link from 'next/link';
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
+
+
 
 export default function Home() {
+  
   return (
     <Layout >
       <div className='bg-blue-800 flex justify-between max-auto min-w-min'>

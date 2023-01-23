@@ -12,7 +12,7 @@ const renderButtons = (onClickABC) =>{
 }
 
 const Abecedario = ({onClickABC}) => (
-    <section className="flex flex-wrap md:w-1/2">
+    <section className="flex flex-wrap">
         {renderButtons(onClickABC)}
     </section>
 )

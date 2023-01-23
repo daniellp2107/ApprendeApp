@@ -2,7 +2,6 @@ import { ApolloProvider } from "@apollo/client";
 import cliente from "../config/apollo";
 import Head from "next/head";
 
-
 function MyApp({ Component, pageProps }) {
   
   return (

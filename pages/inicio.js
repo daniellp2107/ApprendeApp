@@ -6,6 +6,7 @@ import { useMutation, gql } from '@apollo/client';
 import { useRouter } from 'next/router';
 import * as Yup from 'yup';
 
+
 const AUTENTICAR_ALUMNO_MUTATION = gql`
   mutation autenticarAlumno($input:AuthAlumnoInput){
     autenticarAlumno(input:$input){
