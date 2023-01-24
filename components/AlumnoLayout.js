@@ -16,7 +16,7 @@ const AlumnoLayout = ({children}) => {
 
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>
-      <div className='bg-blue-800 min-h-screen'>
+      <div className='bg-blue-800 min-h-screen '>
       {router.pathname === '/opcionusuario' || router.pathname === '/' || router.pathname === '/loginasesor' || router.pathname === '/loginalumno' ? null : <AlumnoNavbar />}  
         
         <main className='bg-blue-800 '>
